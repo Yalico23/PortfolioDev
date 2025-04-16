@@ -1,0 +1,116 @@
+<div class="w-full max-w-4xl text-center p-6 m-auto mt-20" id="skills">
+
+  <h2 class="text-3xl font-bold mb-6 text-yellow-600 font-sans my-11">Mis Habilidades</h2>
+
+  <p class="text-xl font-bold mb-6 text-yellow-600 font-sans text-left mt-24">Backend:</p>
+
+  <div class="grid grid-cols-2 gap-2">
+    <div *ngFor="let skill of skillBackend; let i = index">
+      <button
+        class="w-full flex items-center justify-between bg-gray-700 p-4 rounded shadow hover:bg-gray-600 transition"
+        (click)="toggleAccordion(0,i)"
+      >
+        <div class="flex items-center gap-2">
+          <img src="{{ skill.icon }}" alt="spring boot" class="size-10" />
+          <span class="font-semibold text-white">{{
+            skill.name
+          }}</span>
+        </div>
+        <span [innerHTML]="isOpen(0,i) ? svgMinus : svgPlus"></span>
+      </button>
+
+      <div
+        class="overflow-hidden transition-all duration-300 ease-in-out bg-gray-800 text-gray-800 dark:text-gray-300 px-4"
+        [style.maxHeight]="isOpen(0,i) ? '200px' : '0px'"
+      >
+        <p class="py-2 text-sm text-white text-left">
+          {{ skill.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="text-xl font-bold mb-6 text-yellow-600 font-sans text-left mt-5">Frontend:</p>
+
+  <div class="grid grid-cols-2 gap-2">
+    <div *ngFor="let skill of skillsFrontend; let i = index">
+      <button
+        class="w-full flex items-center justify-between bg-gray-700 p-4 rounded shadow hover:bg-gray-600 transition"
+        (click)="toggleAccordion(1,i)"
+      >
+        <div class="flex items-center gap-2">
+          <img src="{{ skill.icon }}" alt="spring boot" class="size-10" />
+          <span class="font-semibold text-white">{{
+            skill.name
+          }}</span>
+        </div>
+        <span [innerHTML]="isOpen(1,i) ? svgMinus : svgPlus"></span>
+      </button>
+
+      <div
+        class="overflow-hidden transition-all duration-300 ease-in-out bg-gray-800 text-gray-800 dark:text-gray-300 px-4"
+        [style.maxHeight]="isOpen(1,i) ? '200px' : '0px'"
+      >
+        <p class="py-2 text-sm text-white text-left">
+          {{ skill.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="text-xl font-bold mb-6 text-yellow-600 font-sans text-left mt-5">DevOps:</p>
+
+  <div class="grid grid-cols-2 gap-2">
+    <div *ngFor="let skill of skillsDevOps; let i = index">
+      <button
+        class="w-full flex items-center justify-between bg-gray-700 p-4 rounded shadow hover:bg-gray-600 transition"
+        (click)="toggleAccordion(2,i)"
+      >
+        <div class="flex items-center gap-2">
+          <img src="{{ skill.icon }}" alt="spring boot" class="size-10" />
+          <span class="font-semibold text-white">{{
+            skill.name
+          }}</span>
+        </div>
+        <span [innerHTML]="isOpen(2,i) ? svgMinus : svgPlus"></span>
+      </button>
+
+      <div
+        class="overflow-hidden transition-all duration-300 ease-in-out bg-gray-800 text-gray-800 dark:text-gray-300 px-4"
+        [style.maxHeight]="isOpen(2,i) ? '200px' : '0px'"
+      >
+        <p class="py-2 text-sm text-white text-left">
+          {{ skill.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <p class="text-xl font-bold mb-6 text-yellow-600 font-sans text-left mt-5">Data Base:</p>
+
+  <div class="grid grid-cols-2 gap-2">
+    <div *ngFor="let skill of dataBases; let i = index">
+      <button
+        class="w-full flex items-center justify-between bg-gray-700 p-4 rounded shadow hover:bg-gray-600 transition"
+        (click)="toggleAccordion(3,i)"
+      >
+        <div class="flex items-center gap-2">
+          <img src="{{ skill.icon }}" alt="spring boot" class="size-10" />
+          <span class="font-semibold text-white">{{
+            skill.name
+          }}</span>
+        </div>
+        <span [innerHTML]="isOpen(3,i) ? svgMinus : svgPlus"></span>
+      </button>
+
+      <div
+        class="overflow-hidden transition-all duration-300 ease-in-out bg-gray-800 text-gray-800 dark:text-gray-300 px-4"
+        [style.maxHeight]="isOpen(3,i) ? '200px' : '0px'"
+      >
+        <p class="py-2 text-sm text-white text-left">
+          {{ skill.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

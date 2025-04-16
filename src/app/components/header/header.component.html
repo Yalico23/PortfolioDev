@@ -1,0 +1,47 @@
+<nav class="py-5 mb-6 pr-6 z-10 flex justify-between fixed top-0 left-0 right-0 bg-gray-800 bg-opacity-80 backdrop-blur-md border-b border-gray-700 shadow-lg">
+    <div></div>
+    
+    <ul class="flex space-x-4 text-white flex-wrap justify-center gap-2">
+      <li class="flex items-center">
+        <a href="#skills" class="flex items-center hover:underline">
+          <icon-education class="mx-2"></icon-education>
+          Habilidades
+        </a>
+      </li>
+      <li class="flex items-center">
+        <a href="#experience" class="flex items-center hover:underline">
+          <icon-code class="mx-2"></icon-code>
+          Experiencia
+        </a>
+      </li>
+      <li class="flex items-center">
+        <a href="#projects" class="flex items-center hover:underline">
+          <icon-computer class="mx-2"></icon-computer>
+          Proyectos
+        </a>
+      </li>
+      <li class="flex items-center cursor-pointer hover:underline" (click)="openContactModel()">
+        <icon-message class="mx-2"></icon-message>
+          Contactame
+      </li>
+    </ul>
+  </nav>
+  
+  @if (isContactModalOpen) {
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-[#b3871e] rounded-2xl p-6 shadow-xl w-[90%] max-w-md relative">
+        <button class="absolute top-2 right-3 text-black hover:text-red-900" (click)="closeContactModal()">✕</button>
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">Contactame</h2>
+        <p class="mb-4 text-gray-800">Puedes escribirme a:</p>
+        <div class="bg-gray-100 px-4 py-2 rounded mb-4 text-gray-800 font-mono">
+          <p>{{correo}}</p>
+        </div>
+        <a
+          href="mailto:jeanpiero_23_01@hotmail.com"
+          class="block w-full bg-gray-900 text-white text-center py-2 rounded hover:bg-gray-950 transition"
+        >
+          Escribeme
+        </a>
+      </div>
+    </div>
+  }
